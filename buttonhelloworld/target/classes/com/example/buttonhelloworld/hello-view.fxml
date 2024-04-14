@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.buttonhelloworld.HelloController">
+   <children>
+      <StackPane layoutX="-3.0" layoutY="-1.0" prefHeight="409.0" prefWidth="606.0" />
+      <TabPane layoutY="2.0" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Ahoj">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="339.0" prefWidth="595.0">
+                     <children>
+                        <Button fx:id="tlacitko" layoutX="264.0" layoutY="265.0" mnemonicParsing="false" onAction="#onHelloButtonClick" text="Překvápko">
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                        </Button>
+                        <Text fx:id="ahoj" fill="#05c9ff" layoutX="219.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AHOJ" visible="false" wrappingWidth="161.13671875">
+                           <font>
+                              <Font size="63.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Blik">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="light" layoutX="252.0" layoutY="266.0" mnemonicParsing="false" onAction="#onLightBulb" text="Budiž světlo" />
+                        <Button fx:id="dark" layoutX="252.0" layoutY="278.0" mnemonicParsing="false" onAction="#offLightBulb" prefHeight="25.0" prefWidth="80.0" text="Budiž tma" visible="false" />
+                        <ImageView fx:id="on" fitHeight="150.0" fitWidth="200.0" layoutX="239.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@on.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="off" fitHeight="143.0" fitWidth="79.0" layoutX="253.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@off.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Počítání">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text fx:id="cisloText" layoutX="220.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="159.13671875">
+                           <font>
+                              <Font size="96.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="scitani" contentDisplay="CENTER" layoutX="274.0" layoutY="242.0" mnemonicParsing="false" onAction="#onButtonClick" text="Plus 1" textFill="MAGENTA" underline="true" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Hrací kostka">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text fx:id="vysledekText" layoutX="268.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="65.0">
+                           <font>
+                              <Font size="54.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="hoditButton" defaultButton="true" layoutX="275.0" layoutY="279.0" mnemonicParsing="false" onAction="#onClickKostka" text="Hraj" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="IMG kostka">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="281.0" layoutY="269.0" mnemonicParsing="false" onAction="#onImgKostka" text="Hraj" />
+                        <ImageView fx:id="dice1" fitHeight="211.0" fitWidth="161.0" layoutX="222.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@dice_1.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="dice2" fitHeight="170.0" fitWidth="194.0" layoutX="204.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@dice_2.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="dice3" fitHeight="169.0" fitWidth="175.0" layoutX="208.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@dice_3.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="dice4" fitHeight="181.0" fitWidth="191.0" layoutX="207.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@dice_4.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="dice5" fitHeight="187.0" fitWidth="208.0" layoutX="208.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@dice_5.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="dice6" fitHeight="176.0" fitWidth="206.0" layoutX="204.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@dice_6.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Morseovka">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="274.0" layoutY="258.0" mnemonicParsing="false" onAction="#negr" text="Přeložit" />
+                        <TextArea fx:id="preklad" editable="false" layoutX="172.0" layoutY="116.0" prefHeight="118.0" prefWidth="256.0">
+                           <font>
+                              <Font name="Engravers MT" size="24.0" />
+                           </font>
+                        </TextArea>
+                        <TextField fx:id="vypln" layoutX="171.0" layoutY="69.0" prefHeight="25.0" prefWidth="258.0" promptText="Vyplňte" />
+                        <Text layoutX="222.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Morseovka" textAlignment="CENTER">
+                           <font>
+                              <Font name="Calisto MT" size="33.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Objem">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="141.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Povrch a objem válce">
+                           <font>
+                              <Font size="34.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="polomerTextField" layoutX="225.0" layoutY="95.0" promptText="poloměr" />
+                        <TextField fx:id="vyskaTextField" layoutX="225.0" layoutY="161.0" promptText="výška" />
+                        <Button layoutX="199.0" layoutY="247.0" mnemonicParsing="false" onAction="#onObjemClick" text="OBJEM" />
+                        <Button layoutX="348.0" layoutY="247.0" mnemonicParsing="false" onAction="#onPovrchClick" text="POVRCH" />
+                        <Text fx:id="vysledek" layoutX="219.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="162.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="BMI">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: yellow;">
+                     <children>
+                        <Pane layoutX="-1.0" layoutY="-40.0" prefHeight="495.0" prefWidth="304.0" style="-fx-background-color: red;">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="70.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@bmi.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Text fill="#00f6ff" layoutX="-19.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BMI" textAlignment="CENTER" wrappingWidth="222.97412109375">
+                                 <font>
+                                    <Font name="Bodoni MT Poster Compressed" size="74.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="vysledek2" layoutX="100.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="104.0">
+                                 <font>
+                                    <Font size="54.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Text layoutX="347.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BODY MASS INDEX" textAlignment="CENTER" wrappingWidth="222.97412109375">
+                           <font>
+                              <Font name="Bodoni MT Poster Compressed" size="31.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="vyskaTextField2" layoutX="384.0" layoutY="161.0" promptText="Výška" />
+                        <TextField fx:id="hmotnostTextField" layoutX="384.0" layoutY="246.0" promptText="Hmotnost" />
+                        <Text layoutX="384.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Výška (cm)" />
+                        <Text layoutX="384.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hmotnost (kg)" />
+                        <Button layoutX="385.0" layoutY="304.0" mnemonicParsing="false" onAction="#onVypocetButton" prefHeight="25.0" prefWidth="146.0" text="vypočítat" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="WWW">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <WebView fx:id="webView" layoutX="-5.0" layoutY="49.0" prefHeight="320.0" prefWidth="606.0" />
+                        <Button layoutX="42.0" layoutY="14.0" mnemonicParsing="false" onAction="#onGoButton" text="go" />
+                        <Button layoutX="15.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="25.0" prefWidth="27.0" text="&lt;" />
+                        <Button layoutX="73.0" layoutY="14.0" mnemonicParsing="false" onAction="#onForwardsButton" prefHeight="25.0" prefWidth="25.0" text="&gt;" />
+                        <TextField fx:id="urlTextField" layoutX="194.0" layoutY="14.0" prefHeight="25.0" prefWidth="368.0" />
+                        <ProgressBar fx:id="progressBar" layoutX="-2.0" layoutY="40.0" prefHeight="18.0" prefWidth="600.0" progress="0.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="FILE">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="274.0" layoutY="279.0" mnemonicParsing="false" onAction="#onClickProchazet" text="Sezame" />
+                        <TextArea fx:id="textArea" layoutX="93.0" layoutY="22.0" prefHeight="200.0" prefWidth="414.0" promptText="Vyber soubor">
+                           <font>
+                              <Font name="System Italic" size="33.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
